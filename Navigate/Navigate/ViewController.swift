@@ -14,7 +14,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnMenuOpen: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        scrollView.frame = view.frame
+        imageArr = [#imageLiteral(resourceName: "CarParts"),#imageLiteral(resourceName: "compact-red-car-side-view-10034818"),#imageLiteral(resourceName: "Ferrari-599-GTO-Front-View")]
+        for i in 0..<imageArr.count{
+            let imageView = UIImageView()
+            imageView.image = imageArr[i]
+            imageView.contentMode = .scaleAspectFit
+            let xPos = self.view.frame.width * CGFloat(i)
+            imageView.frame = CGRect(x: xPos, y: 0, width: self.scrollView.frame.width, height: self.scrollView.frame.width)
+            scrollView.contentSize.width = scrollView.frame.width * CGFloat(i + 1)
+            scrollView.addSubview(imageView)
+        }
         sideMenus()
         customizeNavBar()
         // Do any additional setup after loading the view, typically from a nib.
@@ -25,6 +35,8 @@ class ViewController: UIViewController {
 
     }
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    var imageArr = [UIImage]()
     func sideMenus(){
         if revealViewController() != nil {
             
