@@ -130,10 +130,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CarParts" translatesAutoresizingMaskIntoConstraints="NO" id="DZW-lu-wBM">
-                                <rect key="frame" x="16" y="199" width="343" height="269"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Exterior Main" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUX-Ap-e1h">
                                 <rect key="frame" x="91" y="110" width="192" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -141,8 +137,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qW2-Iz-TiI">
+                                <rect key="frame" x="0.0" y="30" width="375" height="667"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qW2-Iz-TiI" firstAttribute="centerX" secondItem="Uqw-Yd-meg" secondAttribute="centerX" id="OLi-27-nEZ"/>
+                            <constraint firstItem="qW2-Iz-TiI" firstAttribute="centerY" secondItem="Uqw-Yd-meg" secondAttribute="centerY" id="jMi-Ob-fer"/>
+                            <constraint firstItem="qW2-Iz-TiI" firstAttribute="top" secondItem="Uqw-Yd-meg" secondAttribute="top" constant="30" id="mO6-9s-1yk"/>
+                            <constraint firstItem="qW2-Iz-TiI" firstAttribute="height" secondItem="Uqw-Yd-meg" secondAttribute="height" id="pPr-wO-AYo"/>
+                            <constraint firstItem="qW2-Iz-TiI" firstAttribute="width" secondItem="Uqw-Yd-meg" secondAttribute="width" id="y4j-K0-a9c"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Vlj-FN-Gw6">
                         <barButtonItem key="leftBarButtonItem" title="ADD PARTS" id="l5T-5j-UFw"/>
@@ -151,6 +157,7 @@
                     <connections>
                         <outlet property="addParts" destination="l5T-5j-UFw" id="qnm-vk-SFi"/>
                         <outlet property="btnMenuOpen" destination="XJT-aS-n03" id="ge9-VJ-hM3"/>
+                        <outlet property="scrollView" destination="qW2-Iz-TiI" id="mzV-cI-md1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JZ7-Nb-dAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -233,7 +240,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CarParts" width="507" height="300"/>
         <image name="menu" width="32" height="32"/>
         <image name="profile" width="225" height="225"/>
     </resources>
