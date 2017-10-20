@@ -11,16 +11,24 @@ import FirebaseDatabase
 
 class ViewController: UIViewController , UISearchBarDelegate, UITableViewDelegate{
     
-    //------Firebase - Terry ----------------------------------------------------------
-    var dbref: DatabaseReference?
+    //---------------IBOUTLETS---------------------------------------------------------
     
     @IBOutlet weak var addParts: UIBarButtonItem!
     @IBOutlet weak var btnMenuOpen: UIBarButtonItem!
+
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    //--------------VARIABLES----------------------------------------------------------
+    var dbref: DatabaseReference? //FIREBASE Terry
+
+    
+    var imageArr = [UIImage]()
+    
     
     //-----------------------------MAIN------------------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         //------------------Reference to database -Terry-------------------------------
         dbref = Database.database().reference()
 
@@ -47,11 +55,10 @@ class ViewController: UIViewController , UISearchBarDelegate, UITableViewDelegat
         btnMenuOpen.action = #selector(SWRevealViewController.rightRevealToggle(_:))
 
     }
+    
+   
+    
     //----------------------------SWIPE SIDE MENUS------------------------------------
-
-    @IBOutlet weak var scrollView: UIScrollView!
-    var imageArr = [UIImage]()
-
     func sideMenus(){
         if revealViewController() != nil {
             
