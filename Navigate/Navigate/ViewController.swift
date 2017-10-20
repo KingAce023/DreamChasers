@@ -7,26 +7,15 @@
 //
 
 import UIKit
-import FirebaseDatabase
 
-class ViewController: UIViewController , UISearchBarDelegate, UITableViewDelegate{
-    
-    //------Firebase - Terry ----------------------------------------------------------
-    var dbref: DatabaseReference?
-    
+class ViewController: UIViewController {
+
     @IBOutlet weak var addParts: UIBarButtonItem!
     @IBOutlet weak var btnMenuOpen: UIBarButtonItem!
-    
-    //-----------------------------MAIN------------------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //------------------Reference to database -Terry-------------------------------
-        dbref = Database.database().reference()
-
-        //-------------------Swipe pics -Sully-----------------------------------------
         scrollView.frame = view.frame
-        imageArr = [#imageLiteral(resourceName: "home"),#imageLiteral(resourceName: "DreamChasers"),#imageLiteral(resourceName: "profile")]
+        imageArr = [#imageLiteral(resourceName: "CarParts"),#imageLiteral(resourceName: "compact-red-car-side-view-10034818"),#imageLiteral(resourceName: "Ferrari-599-GTO-Front-View")]
         for i in 0..<imageArr.count{
             let imageView = UIImageView()
             imageView.image = imageArr[i]
@@ -36,22 +25,18 @@ class ViewController: UIViewController , UISearchBarDelegate, UITableViewDelegat
             scrollView.contentSize.width = scrollView.frame.width * CGFloat(i + 1)
             scrollView.addSubview(imageView)
         }
-
         sideMenus()
         customizeNavBar()
-        
-        //----------------Right View load --------------------------------------------
         // Do any additional setup after loading the view, typically from a nib.
+
         revealViewController().rightViewRevealWidth = 250
         btnMenuOpen.target = revealViewController()
         btnMenuOpen.action = #selector(SWRevealViewController.rightRevealToggle(_:))
 
     }
-    //----------------------------SWIPE SIDE MENUS------------------------------------
 
     @IBOutlet weak var scrollView: UIScrollView!
     var imageArr = [UIImage]()
-
     func sideMenus(){
         if revealViewController() != nil {
             
@@ -64,7 +49,6 @@ class ViewController: UIViewController , UISearchBarDelegate, UITableViewDelegat
         }
     }
     
-    //--------------------CUSTOMIZE COLOUR MENU BAR --------------------------------
     func customizeNavBar(){
         navigationController?.navigationBar.tintColor = UIColor(red: 255/255, green:255/255, blue: 255/255, alpha: 1)
         navigationController?.navigationBar.barTintColor = UIColor(red: 255, green:87/255, blue: 35/255, alpha: 1)
@@ -72,7 +56,7 @@ class ViewController: UIViewController , UISearchBarDelegate, UITableViewDelegat
     }
     
     
-    //-------- DO NOT DELETE - DEFAULT MEMORY ALLOCATION ---------------------------
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
