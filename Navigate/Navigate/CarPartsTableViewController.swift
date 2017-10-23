@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class CarPartsTableViewController: UITableViewController,UISearchResultsUpdating {
  
     //--------------------Variables -------------------------
-    var carParts = ["Brakes","Tires", "Windsheild"]
+    var dbref: DatabaseReference?
+    //var dbHandle: DatabaseHandle?
+    var carParts = [String]()
     var filteredCarParts = [String]()
     var searchController: UISearchController!
     
@@ -19,6 +22,7 @@ class CarPartsTableViewController: UITableViewController,UISearchResultsUpdating
     //---------------------Main ------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
+        dbref = Database.database().reference()
         
         self.resultsController.tableView.dataSource = self
         self.resultsController.tableView.delegate = self
@@ -30,6 +34,10 @@ class CarPartsTableViewController: UITableViewController,UISearchResultsUpdating
         //unDims Background for search
         self.searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
+        
+        dbref?.child("Parts").observe(.childAdded, with: { (snapshot) in
+            self.carParts.append(snapshot.key)
+        })
        
     }
     
