@@ -27,7 +27,7 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
     }
 
     func searchBarSetup() {
-        let searchBar = UISearchBar(frame: CGRect(x:0,y:0,width:(UIScreen.main.bounds.width),height:70))
+        let searchBar = UISearchBar(frame: CGRect(x:0,y:0,width:(WIDTHSIZE),height:70))
         searchBar.showsScopeBar = true
         searchBar.scopeButtonTitles = ["Name","Year","Price"]
         searchBar.selectedScopeButtonIndex = 0
@@ -76,6 +76,8 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
     // MARK: - Table view data source
     
     //---------USED TO OVERWRITE WIDTH SIZE OF THE LEFT TABLEVIEW----------
+    /* reference: https://stackoverflow.com/questions/42976006/ios-how-to-set-width-of-tableview-in-tableviewcontroller */
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         self.tableView.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(WIDTHSIZE), height: CGFloat(UIScreen.main.bounds.height))
