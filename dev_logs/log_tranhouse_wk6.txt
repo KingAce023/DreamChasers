@@ -1,0 +1,11 @@
+Duties:
+* We have linked all car parts in our database to the pictures in a standard vehicle
+* I embedded a search bar that statically allocates an array of car parts
+            - Specific team members will replace this static array to the back end through Firebase
+* The sliding swipe view to add car parts cut off the table view of the search table
+* Search table can now sort by Car Part, Date, or price
+* Search bar works for uppercase/lowercase
+
+Results:
+* Have a working prototype of the search bar
+* The search bar table is resized according to whichever size of apple device.
