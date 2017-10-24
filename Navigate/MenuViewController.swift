@@ -11,7 +11,6 @@ import UIKit
 class MenuViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
     @IBOutlet weak var imgProfile: UIImageView!
-    
     var menuNameArr:Array = [String]()
     var iconArr:Array = [UIImage]()
 
@@ -55,7 +54,6 @@ class MenuViewController: UIViewController,UITableViewDataSource,UITableViewDele
 
         let cell:MenuTableViewCell = tableView.cellForRow(at: indexPath) as! MenuTableViewCell
 
-        //-------------------REFERENCES BACK TO THE HOME PAGE LINK---------------------
         if cell.lblMenuName.text! == "Home"
         {
             let mainStoryBoard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -63,19 +61,20 @@ class MenuViewController: UIViewController,UITableViewDataSource,UITableViewDele
             let newFrontViewController = UINavigationController.init(rootViewController:desViewController)
 
             revealViewController.pushFrontViewController(newFrontViewController, animated: true)
+
+
         }
 
-        //---------------REFERENCES BACK TO THE CONTACT US PAGE LINK------------------
         if cell.lblMenuName.text! == "Contact Us"
         {
             let mainStoryBoard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let desViewController = mainStoryBoard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+            let desViewController = mainStoryBoard.instantiateViewController(withIdentifier: "contactViewController") as! contactViewController
             let newFrontViewController = UINavigationController.init(rootViewController:desViewController)
 
             revealViewController.pushFrontViewController(newFrontViewController, animated: true)
+            
+            
         }
-        
-        //----------------REFERENCES BACK TO THE SETTING PAGE LINK--------------------
         if cell.lblMenuName.text! == "Setting"
         {
             let mainStoryBoard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
