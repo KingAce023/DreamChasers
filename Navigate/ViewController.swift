@@ -7,20 +7,24 @@
 //
 
 import UIKit
+import FirebaseAuth
 import FirebaseDatabase
 
 class ViewController: UIViewController , UISearchBarDelegate, UITableViewDelegate{
     
     //---------------IBOUTLETS---------------------------------------------------------
-    
+    /*@IBOutlet weak var loginSelector: UISegmentedControl!
+    @IBOutlet weak var loginLabel: UILabel!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!*/
     @IBOutlet weak var addParts: UIBarButtonItem!
     @IBOutlet weak var btnMenuOpen: UIBarButtonItem!
-
     @IBOutlet weak var scrollView: UIScrollView!
     
     //--------------VARIABLES----------------------------------------------------------
     var dbref: DatabaseReference? //FIREBASE Terry
-
+    //var isLoggedin:Bool = true
     
     var imageArr = [UIImage]()
     
@@ -84,7 +88,41 @@ class ViewController: UIViewController , UISearchBarDelegate, UITableViewDelegat
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+/*    @IBAction func loginSelectorChanged(_ sender: UISegmentedControl) {
+        isLoggedin = !isLoggedin
+        
+        if isLoggedin {
+            loginLabel.text = "User Login"
+            loginButton.setTitle("Login", for: .normal)
+        }else{
+            loginLabel.text = "Register"
+            loginButton.setTitle("Register", for: .normal)
+        }
+    }
+    
+    @IBAction func userLoggedIn(_ sender: UIButton) {
+        if let email = emailTextField.text, let pass = passwordTextField.text{
+            if isLoggedin{
+                Auth.auth().signIn(withEmail: email, password: pass, completion: { (user, error) in
+                    if let u = user{
+                        self.performSegue(withIdentifier: "goToHome", sender: self)
+                    }else{
+                        
+                    }
+                })
+                
+            }else{
+                Auth.auth().createUser(withEmail: email, password: pass, completion: { (user, error) in
+                    if let u = user{
+                        self.performSegue(withIdentifier: "goToHome", sender: self)
+                    }else{
+                        
+                    }
+                })
+            }
+        }
+    }*/
+    
 
 }
 

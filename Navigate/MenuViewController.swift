@@ -10,6 +10,7 @@ import UIKit
 
 class MenuViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
+    
     @IBOutlet weak var imgProfile: UIImageView!
     var menuNameArr:Array = [String]()
     var iconArr:Array = [UIImage]()
