@@ -34,7 +34,7 @@ class ViewController: UIViewController , UISearchBarDelegate, UITableViewDelegat
 
         //-------------------Swipe pics -Sully-----------------------------------------
         scrollView.frame = view.frame
-        imageArr = [#imageLiteral(resourceName: "home"),#imageLiteral(resourceName: "DreamChasers"),#imageLiteral(resourceName: "profile")]
+        imageArr = [#imageLiteral(resourceName: "CarParts"), #imageLiteral(resourceName: "DreamChasers")]
         for i in 0..<imageArr.count{
             let imageView = UIImageView()
             imageView.image = imageArr[i]

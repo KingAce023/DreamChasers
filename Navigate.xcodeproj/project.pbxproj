@@ -17,8 +17,11 @@
 		B24ED09E1DD834200096F982 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ED09D1DD834200096F982 /* MenuViewController.swift */; };
 		B24ED0A01DD834310096F982 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ED09F1DD834310096F982 /* MenuTableViewCell.swift */; };
 		FC9961311F995BD5000BA033 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC9961301F995AE2000BA033 /* GoogleService-Info.plist */; };
+		FCD38D241F9EB0FC00A04B11 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD38D231F9EB0FC00A04B11 /* TableViewController.swift */; };
+		FCD38D261F9EB10800A04B11 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD38D251F9EB10700A04B11 /* DetailViewController.swift */; };
+		FCD38D281F9EB11300A04B11 /* TableViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD38D271F9EB11200A04B11 /* TableViewCell1.swift */; };
+		FCD38D2A1F9EB11A00A04B11 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD38D291F9EB11A00A04B11 /* Model.swift */; };
 		FCE185221F997B6B005578F9 /* DataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE185211F997B6B005578F9 /* DataCell.swift */; };
-		FCE185241F998223005578F9 /* CarPartsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE185231F998223005578F9 /* CarPartsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,8 +41,11 @@
 		B24ED09D1DD834200096F982 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		B24ED09F1DD834310096F982 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		FC9961301F995AE2000BA033 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FCD38D231F9EB0FC00A04B11 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		FCD38D251F9EB10700A04B11 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		FCD38D271F9EB11200A04B11 /* TableViewCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell1.swift; sourceTree = "<group>"; };
+		FCD38D291F9EB11A00A04B11 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		FCE185211F997B6B005578F9 /* DataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCell.swift; sourceTree = "<group>"; };
-		FCE185231F998223005578F9 /* CarPartsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CarPartsTableViewController.swift; path = Navigate/CarPartsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,10 +104,13 @@
 				B24ED0891DD82F540096F982 /* ViewController.swift */,
 				FCE185211F997B6B005578F9 /* DataCell.swift */,
 				B24ED08B1DD82F540096F982 /* Main.storyboard */,
-				FCE185231F998223005578F9 /* CarPartsTableViewController.swift */,
 				B24ED09D1DD834200096F982 /* MenuViewController.swift */,
 				B24ED09F1DD834310096F982 /* MenuTableViewCell.swift */,
 				B24ED08E1DD82F540096F982 /* Assets.xcassets */,
+				FCD38D231F9EB0FC00A04B11 /* TableViewController.swift */,
+				FCD38D251F9EB10700A04B11 /* DetailViewController.swift */,
+				FCD38D271F9EB11200A04B11 /* TableViewCell1.swift */,
+				FCD38D291F9EB11A00A04B11 /* Model.swift */,
 				B24ED0901DD82F540096F982 /* LaunchScreen.storyboard */,
 				B24ED0931DD82F540096F982 /* Info.plist */,
 				B24ED0991DD832C10096F982 /* Navigate-Bridging-Header.h */,
@@ -246,13 +255,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCD38D281F9EB11300A04B11 /* TableViewCell1.swift in Sources */,
 				B24ED08A1DD82F540096F982 /* ViewController.swift in Sources */,
+				FCD38D241F9EB0FC00A04B11 /* TableViewController.swift in Sources */,
 				FCE185221F997B6B005578F9 /* DataCell.swift in Sources */,
 				B24ED0881DD82F540096F982 /* AppDelegate.swift in Sources */,
+				FCD38D2A1F9EB11A00A04B11 /* Model.swift in Sources */,
 				B24ED09C1DD832C10096F982 /* SWRevealViewController.m in Sources */,
-				FCE185241F998223005578F9 /* CarPartsTableViewController.swift in Sources */,
 				B24ED09E1DD834200096F982 /* MenuViewController.swift in Sources */,
 				B24ED0A01DD834310096F982 /* MenuTableViewCell.swift in Sources */,
+				FCD38D261F9EB10800A04B11 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
