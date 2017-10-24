@@ -167,6 +167,40 @@
             </objects>
             <point key="canvasLocation" x="2280.8000000000002" y="866.71664167916049"/>
         </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="1dM-SX-BfT">
+            <objects>
+                <viewController storyboardIdentifier="settingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="q60-Hn-NIc" customClass="settingsViewController" customModule="Navigate" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9Dp-ON-cdi"/>
+                        <viewControllerLayoutGuide type="bottom" id="rke-aJ-ETY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qdp-W4-qnb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lyu-4Y-mss">
+                                <rect key="frame" x="157" y="104" width="127" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6uT-k6-GIH">
+                        <barButtonItem key="leftBarButtonItem" title="ADD PARTS" id="cgN-db-Gfg"/>
+                        <barButtonItem key="rightBarButtonItem" image="menu" id="Kwi-Uz-yc6"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuBtn" destination="Kwi-Uz-yc6" id="tjb-C9-FOG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xUq-CG-jBQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3093.5999999999999" y="866.71664167916049"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="jrs-Me-x4r">
             <objects>
