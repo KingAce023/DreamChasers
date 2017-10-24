@@ -8,6 +8,8 @@
 
 import UIKit
 
+let WIDTHSIZE = UIScreen.main.bounds.width * 0.98
+
 enum selectedScope:Int {
     case name = 0
     case year = 1
@@ -72,6 +74,15 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
     
     
     // MARK: - Table view data source
+    
+    //---------USED TO OVERWRITE WIDTH SIZE OF THE LEFT TABLEVIEW----------
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        self.tableView.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(WIDTHSIZE), height: CGFloat(UIScreen.main.bounds.height))
+    }
+    //---------------------------------------------------------------------
+    
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -105,6 +116,7 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
+    
 
 
 }

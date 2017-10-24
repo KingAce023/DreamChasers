@@ -11,6 +11,7 @@ import FirebaseDatabase
 
 class ViewController: UIViewController , UISearchBarDelegate, UITableViewDelegate{
     
+    let WIDTHSIZE = UIScreen.main.bounds.width * 0.98
     //---------------IBOUTLETS---------------------------------------------------------
     
     @IBOutlet weak var addParts: UIBarButtonItem!
@@ -21,7 +22,6 @@ class ViewController: UIViewController , UISearchBarDelegate, UITableViewDelegat
     //--------------VARIABLES----------------------------------------------------------
     var dbref: DatabaseReference? //FIREBASE Terry
 
-    
     var imageArr = [UIImage]()
     
     
@@ -64,8 +64,8 @@ class ViewController: UIViewController , UISearchBarDelegate, UITableViewDelegat
             
             addParts.target = revealViewController()
             addParts.action = #selector(SWRevealViewController.revealToggle(_:))
-            revealViewController().rearViewRevealWidth = 275
-            revealViewController().rightViewRevealWidth = 160
+            revealViewController().rearViewRevealWidth = WIDTHSIZE //constant declared at top
+            revealViewController().rightViewRevealWidth = WIDTHSIZE //constant declared at top
           
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
