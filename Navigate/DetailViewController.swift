@@ -17,14 +17,15 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageNameLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
-    @IBOutlet weak var byLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         imageNameLabel.text = dataModel.imageName
         yearLabel.text = dataModel.imageYear
-        byLabel.text = dataModel.imageBy
+        priceLabel.text = dataModel.imagePrice
     
         imageView.image = UIImage(named: dataModel.imageName)
     }

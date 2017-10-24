@@ -11,7 +11,7 @@ import UIKit
 enum selectedScope:Int {
     case name = 0
     case year = 1
-    case by = 2
+    case price = 2
 }
 
 class TableViewController: UITableViewController, UISearchBarDelegate {
@@ -27,7 +27,7 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
     func searchBarSetup() {
         let searchBar = UISearchBar(frame: CGRect(x:0,y:0,width:(UIScreen.main.bounds.width),height:70))
         searchBar.showsScopeBar = true
-        searchBar.scopeButtonTitles = ["Name","Year","By"]
+        searchBar.scopeButtonTitles = ["Name","Year","Price"]
         searchBar.selectedScopeButtonIndex = 0
         searchBar.delegate = self
         self.tableView.tableHeaderView = searchBar
@@ -57,10 +57,10 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
                 return mod.imageYear.lowercased().contains(text.lowercased())
             })
             self.tableView.reloadData()
-        case selectedScope.by.rawValue:
+        case selectedScope.price.rawValue:
             //fix of not searching when backspacing
             dataAry = initialDataAry.filter({ (mod) -> Bool in
-                return mod.imageBy.lowercased().contains(text.lowercased())
+                return mod.imagePrice.lowercased().contains(text.lowercased())
             })
             self.tableView.reloadData()
         default:
@@ -91,7 +91,7 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
         
         cell.imgView.image = UIImage(named: model.imageName)
         
-        cell.byLbl.text = model.imageBy
+        cell.priceLbl.text = model.imagePrice
         cell.yearLbl.text = model.imageYear
         
         

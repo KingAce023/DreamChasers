@@ -13,7 +13,7 @@ class TableViewCell1: UITableViewCell {
     
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var yearLbl: UILabel!
-    @IBOutlet weak var byLbl: UILabel!
+    @IBOutlet weak var priceLbl: UILabel!
     
     @IBOutlet weak var imgView: UIImageView!
     
