@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3756F5837798F2A7074AE286 /* Pods_Navigate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2491DDE07B2E5B38AC8EF4C4 /* Pods_Navigate.framework */; };
-		94B780501F9E502900D13354 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B7804F1F9E502900D13354 /* LoginViewController.swift */; };
 		B24ED0881DD82F540096F982 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ED0871DD82F540096F982 /* AppDelegate.swift */; };
 		B24ED08A1DD82F540096F982 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ED0891DD82F540096F982 /* ViewController.swift */; };
 		B24ED08D1DD82F540096F982 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B24ED08B1DD82F540096F982 /* Main.storyboard */; };
@@ -28,7 +27,6 @@
 /* Begin PBXFileReference section */
 		2491DDE07B2E5B38AC8EF4C4 /* Pods_Navigate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Navigate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		376664A6C5F1620DEFF8827D /* Pods-Navigate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Navigate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Navigate/Pods-Navigate.release.xcconfig"; sourceTree = "<group>"; };
-		94B7804F1F9E502900D13354 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A0E59274D5024D1C4284CAE5 /* Pods-Navigate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Navigate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Navigate/Pods-Navigate.debug.xcconfig"; sourceTree = "<group>"; };
 		B24ED0841DD82F540096F982 /* Navigate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B24ED0871DD82F540096F982 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,11 +104,6 @@
 				B24ED0891DD82F540096F982 /* ViewController.swift */,
 				FCE185211F997B6B005578F9 /* DataCell.swift */,
 				B24ED08B1DD82F540096F982 /* Main.storyboard */,
-<<<<<<< HEAD
-=======
-				94B7804F1F9E502900D13354 /* LoginViewController.swift */,
-				FCE185231F998223005578F9 /* CarPartsTableViewController.swift */,
->>>>>>> 32df2321802ab6d64f7de5ca79ab3f519c6f5604
 				B24ED09D1DD834200096F982 /* MenuViewController.swift */,
 				B24ED09F1DD834310096F982 /* MenuTableViewCell.swift */,
 				B24ED08E1DD82F540096F982 /* Assets.xcassets */,
@@ -240,14 +233,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Navigate/Pods-Navigate-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -271,11 +262,6 @@
 				B24ED0881DD82F540096F982 /* AppDelegate.swift in Sources */,
 				FCD38D2A1F9EB11A00A04B11 /* Model.swift in Sources */,
 				B24ED09C1DD832C10096F982 /* SWRevealViewController.m in Sources */,
-<<<<<<< HEAD
-=======
-				94B780501F9E502900D13354 /* LoginViewController.swift in Sources */,
-				FCE185241F998223005578F9 /* CarPartsTableViewController.swift in Sources */,
->>>>>>> 32df2321802ab6d64f7de5ca79ab3f519c6f5604
 				B24ED09E1DD834200096F982 /* MenuViewController.swift in Sources */,
 				B24ED0A01DD834310096F982 /* MenuTableViewCell.swift in Sources */,
 				FCD38D261F9EB10800A04B11 /* DetailViewController.swift in Sources */,
