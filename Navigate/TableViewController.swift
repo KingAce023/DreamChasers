@@ -8,7 +8,7 @@
 
 import UIKit
 
-let WIDTHSIZE = UIScreen.main.bounds.width * 0.98
+let WIDTHSIZE = UIScreen.main.bounds.width * 0.85
 
 enum selectedScope:Int {
     case name = 0
@@ -16,7 +16,7 @@ enum selectedScope:Int {
     case price = 2
 }
 
-class TableViewController: UITableViewController, UISearchBarDelegate {
+class TableViewController: UITableViewController, UISearchBarDelegate{
 
     let initialDataAry:[Model] = Model.generateModelArray()
     var dataAry:[Model] = Model.generateModelArray()
@@ -27,13 +27,20 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
     }
 
     func searchBarSetup() {
-        let searchBar = UISearchBar(frame: CGRect(x:0,y:0,width:(WIDTHSIZE),height:70))
+        let searchBar = UISearchBar(frame: CGRect(x:CGFloat(0),y:CGFloat(0),width: CGFloat(WIDTHSIZE),height:CGFloat(70)))
+
+       
+        
         searchBar.showsScopeBar = true
         searchBar.scopeButtonTitles = ["Name","Year","Price"]
         searchBar.selectedScopeButtonIndex = 0
         searchBar.delegate = self
+ 
         self.tableView.tableHeaderView = searchBar
+        //self.navigationItem.titleView = searchBar
     }
+    
+
     
     // MARK: - search bar delegate
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -47,26 +54,26 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
     
     func filterTableView(ind:Int,text:String) {
         switch ind {
-        case selectedScope.name.rawValue:
-            //fix of not searching when backspacing
-            dataAry = initialDataAry.filter({ (mod) -> Bool in
-                return mod.imageName.lowercased().contains(text.lowercased())
-            })
-            self.tableView.reloadData()
-        case selectedScope.year.rawValue:
-            //fix of not searching when backspacing
-            dataAry = initialDataAry.filter({ (mod) -> Bool in
-                return mod.imageYear.lowercased().contains(text.lowercased())
-            })
-            self.tableView.reloadData()
-        case selectedScope.price.rawValue:
-            //fix of not searching when backspacing
-            dataAry = initialDataAry.filter({ (mod) -> Bool in
-                return mod.imagePrice.lowercased().contains(text.lowercased())
-            })
-            self.tableView.reloadData()
-        default:
-            print("no type")
+            case selectedScope.name.rawValue:
+                //fix of not searching when backspacing
+                dataAry = initialDataAry.filter({ (mod) -> Bool in
+                    return mod.imageName.lowercased().contains(text.lowercased())
+                })
+                self.tableView.reloadData()
+            case selectedScope.year.rawValue:
+                //fix of not searching when backspacing
+                dataAry = initialDataAry.filter({ (mod) -> Bool in
+                    return mod.imageYear.lowercased().contains(text.lowercased())
+                })
+                self.tableView.reloadData()
+            case selectedScope.price.rawValue:
+                //fix of not searching when backspacing
+                dataAry = initialDataAry.filter({ (mod) -> Bool in
+                    return mod.imagePrice.lowercased().contains(text.lowercased())
+                })
+                self.tableView.reloadData()
+            default:
+                print("no type")
         }
     }
     
@@ -76,14 +83,20 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
     // MARK: - Table view data source
     
     //---------USED TO OVERWRITE WIDTH SIZE OF THE LEFT TABLEVIEW----------
-    /* reference: https://stackoverflow.com/questions/42976006/ios-how-to-set-width-of-tableview-in-tableviewcontroller */
-    
+    /* reference: https://stackoverflow.com/questions/42976006/ios-how-to-set-width-of-tableview-in-tableviewcontroller
+    */
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+
         self.tableView.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(WIDTHSIZE), height: CGFloat(UIScreen.main.bounds.height))
     }
+ 
     //---------------------------------------------------------------------
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        self.tableView.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(WIDTHSIZE), height: CGFloat(UIScreen.main.bounds.height))
+    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections

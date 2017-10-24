@@ -9,9 +9,9 @@
 import UIKit
 import FirebaseDatabase
 
-class ViewController: UIViewController , UISearchBarDelegate, UITableViewDelegate{
+class ViewController: UIViewController, UITableViewDelegate{
     
-    let WIDTHSIZE = UIScreen.main.bounds.width * 0.98
+    let WIDTHSIZE = UIScreen.main.bounds.width * 0.85
     //---------------IBOUTLETS---------------------------------------------------------
     
     @IBOutlet weak var addParts: UIBarButtonItem!
@@ -34,7 +34,7 @@ class ViewController: UIViewController , UISearchBarDelegate, UITableViewDelegat
 
         //-------------------Swipe pics -Sully-----------------------------------------
         scrollView.frame = view.frame
-        imageArr = [#imageLiteral(resourceName: "CarParts"), #imageLiteral(resourceName: "DreamChasers")]
+        imageArr = [#imageLiteral(resourceName: "CarParts"), #imageLiteral(resourceName: "carSideView")]
         for i in 0..<imageArr.count{
             let imageView = UIImageView()
             imageView.image = imageArr[i]
