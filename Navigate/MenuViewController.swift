@@ -78,7 +78,7 @@ class MenuViewController: UIViewController,UITableViewDataSource,UITableViewDele
         if cell.lblMenuName.text! == "Setting"
         {
             let mainStoryBoard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let desViewController = mainStoryBoard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+            let desViewController = mainStoryBoard.instantiateViewController(withIdentifier: "settingsViewController") as! settingsViewController
             let newFrontViewController = UINavigationController.init(rootViewController:desViewController)
             
             revealViewController.pushFrontViewController(newFrontViewController, animated: true)
