@@ -5,6 +5,8 @@ Duties:
 * The sliding swipe view to add car parts cut off the table view of the search table - Found tablewidth (30 minutes)
 * Search table can now sort by Car Part, Date, or price (embedded code above)
 * Search bar works for uppercase/lowercase (embedded code above)
+* Settings menu page template was created (30 minutes)
+* Contact settings button added (10 minutes)
 
 Acheivements:
 * Have a working prototype of the search bar
