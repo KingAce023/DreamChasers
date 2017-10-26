@@ -7,10 +7,37 @@
 //
 
 import UIKit
-
+import UserNotifications
 class settingsViewController: UIViewController {
 
     @IBOutlet weak var menuBtn: UIBarButtonItem!
+    @IBOutlet weak var theSwitch: UISwitch!
+    @IBAction func onOffSwitch(_ sender: Any) {
+        if theSwitch.isOn{
+            let content = UNMutableNotificationContent()
+            content.title = "Navigate"
+            content.subtitle = "Notification Settings"
+            content.body = "Push Notifictions are On"
+            
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3,repeats: false )
+            
+            let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+            
+        }
+        else{
+            let content = UNMutableNotificationContent()
+            content.title = "Navigate"
+            content.subtitle = "Notification Settings"
+            content.body = "Push Notifictions are Off"
+            
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3,repeats: false )
+            
+            let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+            
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

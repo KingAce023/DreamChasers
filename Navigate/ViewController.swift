@@ -43,6 +43,7 @@ class ViewController: UIViewController, UITableViewDelegate{
             imageView.frame = CGRect(x: xPos, y: 0, width: self.scrollView.frame.width, height: self.scrollView.frame.width)
             scrollView.contentSize.width = scrollView.frame.width * CGFloat(i + 1)
             scrollView.addSubview(imageView)
+            
         }
 
         sideMenus()

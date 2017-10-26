@@ -16,6 +16,9 @@
 		B24ED09C1DD832C10096F982 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24ED09B1DD832C10096F982 /* SWRevealViewController.m */; };
 		B24ED09E1DD834200096F982 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ED09D1DD834200096F982 /* MenuViewController.swift */; };
 		B24ED0A01DD834310096F982 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ED09F1DD834310096F982 /* MenuTableViewCell.swift */; };
+		FC36242C1FA01BD20035D24A /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC36242B1FA01BD20035D24A /* settingsViewController.swift */; };
+		FC36242F1FA01BEE0035D24A /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC36242D1FA01BED0035D24A /* MessageViewController.swift */; };
+		FC3624301FA01BEE0035D24A /* contactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC36242E1FA01BED0035D24A /* contactViewController.swift */; };
 		FC9961311F995BD5000BA033 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC9961301F995AE2000BA033 /* GoogleService-Info.plist */; };
 		FCD38D241F9EB0FC00A04B11 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD38D231F9EB0FC00A04B11 /* TableViewController.swift */; };
 		FCD38D261F9EB10800A04B11 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD38D251F9EB10700A04B11 /* DetailViewController.swift */; };
@@ -40,6 +43,9 @@
 		B24ED09B1DD832C10096F982 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		B24ED09D1DD834200096F982 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		B24ED09F1DD834310096F982 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		FC36242B1FA01BD20035D24A /* settingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
+		FC36242D1FA01BED0035D24A /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		FC36242E1FA01BED0035D24A /* contactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = contactViewController.swift; sourceTree = "<group>"; };
 		FC9961301F995AE2000BA033 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FCD38D231F9EB0FC00A04B11 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		FCD38D251F9EB10700A04B11 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +112,9 @@
 				B24ED08B1DD82F540096F982 /* Main.storyboard */,
 				B24ED09D1DD834200096F982 /* MenuViewController.swift */,
 				B24ED09F1DD834310096F982 /* MenuTableViewCell.swift */,
+				FC36242B1FA01BD20035D24A /* settingsViewController.swift */,
+				FC36242E1FA01BED0035D24A /* contactViewController.swift */,
+				FC36242D1FA01BED0035D24A /* MessageViewController.swift */,
 				B24ED08E1DD82F540096F982 /* Assets.xcassets */,
 				FCD38D231F9EB0FC00A04B11 /* TableViewController.swift */,
 				FCD38D251F9EB10700A04B11 /* DetailViewController.swift */,
@@ -260,10 +269,13 @@
 				FCD38D241F9EB0FC00A04B11 /* TableViewController.swift in Sources */,
 				FCE185221F997B6B005578F9 /* DataCell.swift in Sources */,
 				B24ED0881DD82F540096F982 /* AppDelegate.swift in Sources */,
+				FC3624301FA01BEE0035D24A /* contactViewController.swift in Sources */,
 				FCD38D2A1F9EB11A00A04B11 /* Model.swift in Sources */,
 				B24ED09C1DD832C10096F982 /* SWRevealViewController.m in Sources */,
+				FC36242C1FA01BD20035D24A /* settingsViewController.swift in Sources */,
 				B24ED09E1DD834200096F982 /* MenuViewController.swift in Sources */,
 				B24ED0A01DD834310096F982 /* MenuTableViewCell.swift in Sources */,
+				FC36242F1FA01BEE0035D24A /* MessageViewController.swift in Sources */,
 				FCD38D261F9EB10800A04B11 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
