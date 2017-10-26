@@ -26,11 +26,11 @@ class Model: NSObject {
     class func generateModelArray() -> [Model]{
         var modelAry = [Model]()
         
-        modelAry.append(Model(name: "img0", year: "2000", price: "234.25"))
-        modelAry.append(Model(name: "img1", year: "2010", price: "32.45"))
-        modelAry.append(Model(name: "img2", year: "2008", price: "44.97"))
-        modelAry.append(Model(name: "img3", year: "2015", price: "19.99"))
-        modelAry.append(Model(name: "img4", year: "2020", price: "45.75"))
+        modelAry.append(Model(name: "tire", year: "2000", price: "175 - 300"))
+        modelAry.append(Model(name: "battery", year: "2010", price: "75 - 150"))
+        modelAry.append(Model(name: "sparkPlug", year: "2008", price: "5 - 25"))
+        modelAry.append(Model(name: "muffler", year: "2015", price: "75 - 125"))
+        modelAry.append(Model(name: "breakPads", year: "2020", price: "50 - 100"))
         
         return modelAry
     }
