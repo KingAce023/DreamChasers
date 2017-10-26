@@ -191,9 +191,12 @@
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FDf-cU-YFd">
                                         <rect key="frame" x="230" y="212" width="49" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+<<<<<<< HEAD
                                         <connections>
                                             <action selector="onOffSwitch:" destination="q60-Hn-NIc" eventType="valueChanged" id="Vzz-K4-bJi"/>
                                         </connections>
+=======
+>>>>>>> c0e637ed8f7ea66955e46f7e5d599310ed188ad3
                                     </switch>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="myProfile-1" translatesAutoresizingMaskIntoConstraints="NO" id="2de-My-7YF">
                                         <rect key="frame" x="0.0" y="71" width="277" height="95"/>
