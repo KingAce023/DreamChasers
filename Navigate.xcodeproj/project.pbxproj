@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3756F5837798F2A7074AE286 /* Pods_Navigate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2491DDE07B2E5B38AC8EF4C4 /* Pods_Navigate.framework */; };
+		6C3528281FA3B5A800008135 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3528271FA3B5A800008135 /* LoginViewController.swift */; };
 		B24ED0881DD82F540096F982 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ED0871DD82F540096F982 /* AppDelegate.swift */; };
 		B24ED08A1DD82F540096F982 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ED0891DD82F540096F982 /* ViewController.swift */; };
 		B24ED08D1DD82F540096F982 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B24ED08B1DD82F540096F982 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		2491DDE07B2E5B38AC8EF4C4 /* Pods_Navigate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Navigate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		376664A6C5F1620DEFF8827D /* Pods-Navigate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Navigate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Navigate/Pods-Navigate.release.xcconfig"; sourceTree = "<group>"; };
+		6C3528271FA3B5A800008135 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A0E59274D5024D1C4284CAE5 /* Pods-Navigate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Navigate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Navigate/Pods-Navigate.debug.xcconfig"; sourceTree = "<group>"; };
 		B24ED0841DD82F540096F982 /* Navigate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B24ED0871DD82F540096F982 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				FC36242B1FA01BD20035D24A /* settingsViewController.swift */,
 				FC36242E1FA01BED0035D24A /* contactViewController.swift */,
 				FC36242D1FA01BED0035D24A /* MessageViewController.swift */,
+				6C3528271FA3B5A800008135 /* LoginViewController.swift */,
 				B24ED08E1DD82F540096F982 /* Assets.xcassets */,
 				FCD38D231F9EB0FC00A04B11 /* TableViewController.swift */,
 				FCD38D251F9EB10700A04B11 /* DetailViewController.swift */,
@@ -242,12 +245,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Navigate/Pods-Navigate-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -264,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C3528281FA3B5A800008135 /* LoginViewController.swift in Sources */,
 				FCD38D281F9EB11300A04B11 /* TableViewCell1.swift in Sources */,
 				B24ED08A1DD82F540096F982 /* ViewController.swift in Sources */,
 				FCD38D241F9EB0FC00A04B11 /* TableViewController.swift in Sources */,

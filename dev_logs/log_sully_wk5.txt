@@ -1,1 +1,2 @@
-Researching left and right swipe, to swipe between specific views of the car.
+Researched left and right picture swipe, to swipe between specific views of the car.
+Implemented swiping pictures in main home screen of application. 
