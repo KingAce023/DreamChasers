@@ -9,7 +9,9 @@
 import UIKit
 import FirebaseDatabase
 
-class ViewController: UIViewController, UITableViewDelegate{
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+   
+    
     
     let WIDTHSIZE = UIScreen.main.bounds.width * 0.85
     //---------------IBOUTLETS---------------------------------------------------------
@@ -24,6 +26,7 @@ class ViewController: UIViewController, UITableViewDelegate{
 
     var imageArr = [UIImage]()
     
+    var data = ["Ralton", "Naseer", "Ton", "Terry"]
     
     //-----------------------------MAIN------------------------------------------------
     override func viewDidLoad() {
@@ -77,6 +80,21 @@ class ViewController: UIViewController, UITableViewDelegate{
         navigationController?.navigationBar.tintColor = UIColor(red: 255/255, green:255/255, blue: 255/255, alpha: 1)
         navigationController?.navigationBar.barTintColor = UIColor(red: 255, green:87/255, blue: 35/255, alpha: 1)
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+    }
+    
+    //--------------------SETUP TABLEVIEW CELL --------------------------------
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.textLabel?.text = data[indexPath.row]
+        return cell
     }
     
     
