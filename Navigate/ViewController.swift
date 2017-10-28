@@ -17,7 +17,7 @@ class ViewController: UIViewController, UITableViewDelegate{
     @IBOutlet weak var addParts: UIBarButtonItem!
     @IBOutlet weak var btnMenuOpen: UIBarButtonItem!
 
-    @IBOutlet weak var scrollView: UIScrollView!
+   // @IBOutlet weak var scrollView: UIScrollView!
     
     //--------------VARIABLES----------------------------------------------------------
     var dbref: DatabaseReference? //FIREBASE Terry
@@ -33,7 +33,7 @@ class ViewController: UIViewController, UITableViewDelegate{
         dbref = Database.database().reference()
 
         //-------------------Swipe pics -Sully-----------------------------------------
-        scrollView.frame = view.frame
+        /*scrollView.frame = view.frame
         imageArr = [#imageLiteral(resourceName: "CarParts"), #imageLiteral(resourceName: "carSideView")]
         for i in 0..<imageArr.count{
             let imageView = UIImageView()
@@ -44,7 +44,7 @@ class ViewController: UIViewController, UITableViewDelegate{
             scrollView.contentSize.width = scrollView.frame.width * CGFloat(i + 1)
             scrollView.addSubview(imageView)
             
-        }
+        }*/
 
         sideMenus()
         customizeNavBar()
