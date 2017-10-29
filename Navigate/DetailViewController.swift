@@ -24,7 +24,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var partAdded: UILabel!
     
-<<<<<<< HEAD
+//<<<<<<< HEAD
     
     //-------- ADD TO INVENTORY -------
     
@@ -32,7 +32,7 @@ class DetailViewController: UIViewController {
         inventoryList.append("John")
         performSegue(withIdentifier: "segue", sender: ViewController)
     }
-    
+ 
     
     //----------Copy function --------------
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -41,17 +41,17 @@ class DetailViewController: UIViewController {
     }
     
     //------------ MAIN --------------------
-=======
-    var dbref: DatabaseReference?
->>>>>>> 22b9f77d21fa51084afd4f6626c2184e050419e4
+//=======
+  //  var dbref: DatabaseReference?
+//>>>>>>> 22b9f77d21fa51084afd4f6626c2184e050419e4
     override func viewDidLoad() {
         super.viewDidLoad()
-        dbref = Database.database().reference()
+       // dbref = Database.database().reference()
         imageNameLabel.text = dataModel.imageName
         yearLabel.text = dataModel.imageYear
         priceLabel.text = dataModel.imagePrice
-        self.partAdded.isHidden = true
-        partAdded.text = "Part Added!"
+       // self.partAdded.isHidden = true
+     //   partAdded.text = "Part Added!"
     
         imageView.image = UIImage(named: dataModel.imageName)
     }
@@ -64,8 +64,8 @@ class DetailViewController: UIViewController {
     
     @IBAction func addToInventory(_ sender: Any) {
         let user = Auth.auth().currentUser?.uid
-    self.dbref?.child("Users").child(user!).child("repairs").childByAutoId().setValue(imageNameLabel.text)
-        self.partAdded.isHidden = false
+    //self.dbref?.child("Users").child(user!).child("repairs").childByAutoId().setValue(imageNameLabel.text)
+        //self.partAdded.isHidden = false
         
     }
     /*
