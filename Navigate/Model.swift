@@ -7,8 +7,7 @@
 //
 
 import UIKit
-
-//THIS IS WHERE YOU UPDATE THE STATIC ARRAY WITH THE FIREBASE DATABASE
+import Firebase
 
 class Model: NSObject {
     var imageName:String = ""
@@ -24,7 +23,24 @@ class Model: NSObject {
 //Note, the name MUST match the picture name from the Assets.xcassets folder, or else it will not populate.
     
     class func generateModelArray() -> [Model]{
+        var dbref: DatabaseReference?
+        dbref = Database.database().reference()
+
         var modelAry = [Model]()
+        /*dbref?.child("Parts").observe(.childAdded, with: { (snapshot) in
+            //let partkey = snapshot.value as? [String:AnyObject]
+            /*for part in (snapshot.children){
+                let partName = snapshot.key
+                for info in partName.children{
+                    
+                }
+            }
+            //let partName = snapshot.key
+            let partPrice = snapshot.
+            let partYear = snapshot.value(forKey: "year") as! String*/
+            let partName = snapshot.key
+            modelAry.append(Model(name: partName, year: "partYear", price: "partPrice"))
+        })*/
         
         modelAry.append(Model(name: "tire", year: "2000", price: "175 - 300"))
         modelAry.append(Model(name: "battery", year: "2010", price: "75 - 150"))

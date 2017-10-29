@@ -8,7 +8,7 @@
 
 import UIKit
 import Firebase
-import FirebaseAuth
+
 
 class LoginViewController: UIViewController {
 
@@ -16,10 +16,11 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var errorMessage: UILabel!
     
+    var dbref: DatabaseReference?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        dbref = Database.database().reference()
         // Do any additional setup after loading the view.
     }
 
@@ -33,9 +34,15 @@ class LoginViewController: UIViewController {
         if let em = email.text, let pass = password.text{
             Auth.auth().createUser(withEmail: em, password: pass, completion: { (user, error) in
                 if let u = user{
+                    let info = [
+                        "email": em,
+                        "password": pass,
+                        "repairs": ""
+                    ]
+                    self.dbref?.child("Users").child(u.uid).setValue(info)
                     self.performSegue(withIdentifier: "goToHomePage", sender: self)
                 }else{
-                    self.errorMessage.text = "Invalid email/Password must be at least 7 characters."
+                    self.errorMessage.text = "Invalid email/Password must be at least 6 characters."
                     self.errorMessage.isHidden = false
                 }
             })
