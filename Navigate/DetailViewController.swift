@@ -12,6 +12,9 @@ class DetailViewController: UIViewController {
 
     //from prev controller
     var dataModel:Model!
+   
+    //-----------VARIABLES---------------------
+    var inventoryList = [String]()
     
     //IBOutlets
     @IBOutlet weak var imageView: UIImageView!
@@ -20,6 +23,21 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var priceLabel: UILabel!
     
     
+    //-------- ADD TO INVENTORY -------
+    
+    @IBAction func invList(_ sender: UIButton) {
+        inventoryList.append("John")
+        performSegue(withIdentifier: "segue", sender: ViewController)
+    }
+    
+    
+    //----------Copy function --------------
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let populateList = segue.destination as! ViewController
+        populateList.data = inventoryList
+    }
+    
+    //------------ MAIN --------------------
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,6 +48,7 @@ class DetailViewController: UIViewController {
         imageView.image = UIImage(named: dataModel.imageName)
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

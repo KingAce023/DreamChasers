@@ -26,12 +26,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     var imageArr = [UIImage]()
     
-    var data = ["Ralton", "Naseer", "Ton", "Terry"]
+    var data = [String]()
     
     //-----------------------------MAIN------------------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         //------------------Reference to database -Terry-------------------------------
         dbref = Database.database().reference()
 
@@ -78,7 +79,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //--------------------CUSTOMIZE COLOUR MENU BAR --------------------------------
     func customizeNavBar(){
         navigationController?.navigationBar.tintColor = UIColor(red: 255/255, green:255/255, blue: 255/255, alpha: 1)
-        navigationController?.navigationBar.barTintColor = UIColor(red: 255, green:87/255, blue: 35/255, alpha: 1)
+        navigationController?.navigationBar.barTintColor = UIColor(red: 0, green:0/255, blue: 0/255, alpha: 1)
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
     }
     
