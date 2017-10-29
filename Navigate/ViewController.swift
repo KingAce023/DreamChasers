@@ -9,7 +9,9 @@
 import UIKit
 import FirebaseDatabase
 
-class ViewController: UIViewController, UITableViewDelegate{
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+   
+    
     
     let WIDTHSIZE = UIScreen.main.bounds.width * 0.85
     //---------------IBOUTLETS---------------------------------------------------------
@@ -17,13 +19,14 @@ class ViewController: UIViewController, UITableViewDelegate{
     @IBOutlet weak var addParts: UIBarButtonItem!
     @IBOutlet weak var btnMenuOpen: UIBarButtonItem!
 
-    @IBOutlet weak var scrollView: UIScrollView!
+   // @IBOutlet weak var scrollView: UIScrollView!
     
     //--------------VARIABLES----------------------------------------------------------
     var dbref: DatabaseReference? //FIREBASE Terry
 
     var imageArr = [UIImage]()
     
+    var data = ["Ralton", "Naseer", "Ton", "Terry"]
     
     //-----------------------------MAIN------------------------------------------------
     override func viewDidLoad() {
@@ -33,7 +36,7 @@ class ViewController: UIViewController, UITableViewDelegate{
         dbref = Database.database().reference()
 
         //-------------------Swipe pics -Sully-----------------------------------------
-        scrollView.frame = view.frame
+        /*scrollView.frame = view.frame
         imageArr = [#imageLiteral(resourceName: "CarParts"), #imageLiteral(resourceName: "carSideView")]
         for i in 0..<imageArr.count{
             let imageView = UIImageView()
@@ -44,7 +47,7 @@ class ViewController: UIViewController, UITableViewDelegate{
             scrollView.contentSize.width = scrollView.frame.width * CGFloat(i + 1)
             scrollView.addSubview(imageView)
             
-        }
+        }*/
 
         sideMenus()
         customizeNavBar()
@@ -77,6 +80,21 @@ class ViewController: UIViewController, UITableViewDelegate{
         navigationController?.navigationBar.tintColor = UIColor(red: 255/255, green:255/255, blue: 255/255, alpha: 1)
         navigationController?.navigationBar.barTintColor = UIColor(red: 255, green:87/255, blue: 35/255, alpha: 1)
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+    }
+    
+    //--------------------SETUP TABLEVIEW CELL --------------------------------
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.textLabel?.text = data[indexPath.row]
+        return cell
     }
     
     
