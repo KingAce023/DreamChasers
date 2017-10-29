@@ -11,9 +11,7 @@ import FirebaseDatabase
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
    
-    
-    
-    let WIDTHSIZE = UIScreen.main.bounds.width * 0.85
+    let WIDTHSIZE = UIScreen.main.bounds.width * 0.85   //peak width for add parts or settings
     //---------------IBOUTLETS---------------------------------------------------------
     
     @IBOutlet weak var addParts: UIBarButtonItem!
@@ -24,18 +22,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //--------------VARIABLES----------------------------------------------------------
     var dbref: DatabaseReference? //FIREBASE Terry
 
-    var imageArr = [UIImage]()
+    var imageArr = [UIImage]()  // swipe images for main page
     
-    var data = [String]()
+    var data = [String]() //Inventory list
     
     //-----------------------------MAIN------------------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        //Stored array is receiving to populate inventory list is being accessed from DetailViewController variable called inventory list (global variable)
+        data = DetailViewController.GlobalVariable.inventoryList
+
         //------------------Reference to database -Terry-------------------------------
         dbref = Database.database().reference()
 
+        
         //-------------------Swipe pics -Sully-----------------------------------------
         /*scrollView.frame = view.frame
         imageArr = [#imageLiteral(resourceName: "CarParts"), #imageLiteral(resourceName: "carSideView")]

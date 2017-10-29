@@ -256,7 +256,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="mSo-hc-nfU">
-                        <barButtonItem key="leftBarButtonItem" title="ADD PARTS" id="sAv-Cf-351"/>
                         <barButtonItem key="rightBarButtonItem" image="menu" id="j3k-T0-UKp"/>
                     </navigationItem>
                     <connections>
@@ -394,7 +393,6 @@
                         </subviews>
                     </view>
                     <navigationItem key="navigationItem" id="6uT-k6-GIH">
-                        <barButtonItem key="leftBarButtonItem" title="ADD PARTS" id="cgN-db-Gfg"/>
                         <barButtonItem key="rightBarButtonItem" image="menu" id="Kwi-Uz-yc6"/>
                     </navigationItem>
                     <connections>
@@ -419,7 +417,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exterior Main" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUX-Ap-e1h">
-                                <rect key="frame" x="91" y="66" width="192" height="64.5"/>
+                                <rect key="frame" x="91" y="110" width="192" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -651,7 +649,6 @@
                                 <state key="normal" title="Add to My Inventory"/>
                                 <connections>
                                     <action selector="invList:" destination="efC-Sw-FQq" eventType="touchUpInside" id="r3O-Jw-uNu"/>
-                                    <segue destination="VYq-n9-i1a" kind="show" identifier="segue" id="vbX-S7-cIc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -711,7 +708,4 @@
         <image name="rari" width="640" height="1136"/>
         <image name="settings" width="300" height="300"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="vbX-S7-cIc"/>
-    </inferredMetricsTieBreakers>
 </document>
