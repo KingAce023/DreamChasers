@@ -569,7 +569,17 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.91098775799999998" green="0.91098775799999998" blue="0.91098775799999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Add to My Inventory"/>
+                                <connections>
+                                    <action selector="addToInventory:" destination="efC-Sw-FQq" eventType="touchUpInside" id="Mwr-3U-NCq"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDa-x4-rMF">
+                                <rect key="frame" x="26" y="536" width="138" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.23362756340675805" blue="0.051132133565477078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -592,6 +602,7 @@
                     <connections>
                         <outlet property="imageNameLabel" destination="Wce-mg-wk0" id="0kT-ny-nx1"/>
                         <outlet property="imageView" destination="4J1-v7-RcI" id="nmu-Pa-TEK"/>
+                        <outlet property="partAdded" destination="iDa-x4-rMF" id="Pgj-m7-uqJ"/>
                         <outlet property="priceLabel" destination="8OF-qu-Wzb" id="lvJ-ou-Ovt"/>
                         <outlet property="yearLabel" destination="P7f-E7-Du1" id="DMD-iu-SdS"/>
                     </connections>
