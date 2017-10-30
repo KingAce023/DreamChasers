@@ -34,7 +34,8 @@ class DetailViewController: UIViewController {
         self.dbref?.child("Users").child(user!).child("repairs").childByAutoId().setValue(imageNameLabel.text)
         self.partAdded.isHidden = false
         GlobalVariable.inventoryList.append(imageNameLabel.text!)
-       if (imageNameLabel.text == "battery"){
+       
+        if (imageNameLabel.text == "battery"){
             GlobalVariable.car1.append(CGRect(x: 50, y: 50, width: 50, height: 50))
            // ViewController.cut(hole: GlobalVariable.car1, v: (sourceController?.car)!)
         }
