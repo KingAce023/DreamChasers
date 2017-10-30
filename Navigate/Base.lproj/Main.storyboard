@@ -204,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oEq-ys-sz1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1439" y="867"/>
+            <point key="canvasLocation" x="1437.5999999999999" y="866.71664167916049"/>
         </scene>
         <!--Contact View Controller-->
         <scene sceneID="nch-qD-fzN">
@@ -422,6 +422,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="interior2" translatesAutoresizingMaskIntoConstraints="NO" id="weR-1S-SDY">
+                                <rect key="frame" x="0.0" y="202" width="375" height="167"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="CarParts" translatesAutoresizingMaskIntoConstraints="NO" id="Ppd-DS-bR6">
                                 <rect key="frame" x="0.0" y="202" width="375" height="167"/>
                                 <constraints>
@@ -459,12 +463,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Vlj-FN-Gw6">
-                        <barButtonItem key="leftBarButtonItem" title="ADD PARTS" id="l5T-5j-UFw"/>
+                        <barButtonItem key="leftBarButtonItem" title="Add Parts" id="l5T-5j-UFw"/>
                         <barButtonItem key="rightBarButtonItem" image="menu" id="XJT-aS-n03"/>
                     </navigationItem>
                     <connections>
                         <outlet property="addParts" destination="l5T-5j-UFw" id="qnm-vk-SFi"/>
                         <outlet property="btnMenuOpen" destination="XJT-aS-n03" id="ge9-VJ-hM3"/>
+                        <outlet property="car" destination="Ppd-DS-bR6" id="fTn-Yd-4dG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JZ7-Nb-dAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -651,6 +656,13 @@
                                     <action selector="invList:" destination="efC-Sw-FQq" eventType="touchUpInside" id="r3O-Jw-uNu"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZq-hs-5xS">
+                                <rect key="frame" x="26" y="539" width="138" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -673,6 +685,7 @@
                     <connections>
                         <outlet property="imageNameLabel" destination="Wce-mg-wk0" id="0kT-ny-nx1"/>
                         <outlet property="imageView" destination="4J1-v7-RcI" id="nmu-Pa-TEK"/>
+                        <outlet property="partAdded" destination="aZq-hs-5xS" id="0bG-qf-TfA"/>
                         <outlet property="priceLabel" destination="8OF-qu-Wzb" id="lvJ-ou-Ovt"/>
                         <outlet property="yearLabel" destination="P7f-E7-Du1" id="DMD-iu-SdS"/>
                     </connections>
@@ -702,6 +715,7 @@
     </scenes>
     <resources>
         <image name="CarParts" width="507" height="300"/>
+        <image name="interior2" width="507" height="300"/>
         <image name="menu" width="32" height="32"/>
         <image name="myProfile-1" width="721" height="240"/>
         <image name="profile" width="225" height="225"/>

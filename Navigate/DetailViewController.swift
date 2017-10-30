@@ -21,15 +21,39 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var imageNameLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    weak var sourceController: ViewController?
     
     @IBOutlet weak var partAdded: UILabel!
+    //let vc = ViewController()
     
 //<<<<<<< HEAD
     
     //-------- ADD TO INVENTORY BUTTON -------
     @IBAction func invList(_ sender: UIButton) {
+        let user = Auth.auth().currentUser?.uid
+        self.dbref?.child("Users").child(user!).child("repairs").childByAutoId().setValue(imageNameLabel.text)
+        self.partAdded.isHidden = false
         GlobalVariable.inventoryList.append(imageNameLabel.text!)
-        print(GlobalVariable.inventoryList)
+       if (imageNameLabel.text == "battery"){
+            GlobalVariable.car1.append(CGRect(x: 50, y: 50, width: 50, height: 50))
+           // ViewController.cut(hole: GlobalVariable.car1, v: (sourceController?.car)!)
+        }
+        else if (imageNameLabel.text == "breakPads"){
+            GlobalVariable.car1.append(CGRect(x: 340, y: 60, width: 40, height: 40))
+         //   ViewController.cut(hole: GlobalVariable.car1, v: ViewController().car)
+        }
+        else if (imageNameLabel.text == "tire"){
+            GlobalVariable.car1.append(CGRect(x: 170, y: 90, width: 50, height: 40))
+       //     ViewController.cut(hole: GlobalVariable.car1, v: ViewController().car)
+        }
+        else if (imageNameLabel.text == "muffler"){
+            GlobalVariable.car1.append(CGRect(x: 270, y: 60, width: 20, height: 20))
+     //       ViewController.cut(hole: GlobalVariable.car1, v: ViewController().car)
+        }
+        else if (imageNameLabel.text == "sparkPlug"){
+            GlobalVariable.car1.append(CGRect(x: 120, y: 85, width: 40, height: 20))
+   //         ViewController.cut(hole: GlobalVariable.car1, v: ViewController().car)
+        }
    
         //--------------This will reload the main page again----------------
         let mainStoryBoard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -40,23 +64,21 @@ class DetailViewController: UIViewController {
     }
  
     
-    /* =======
    var dbref: DatabaseReference?
- >>>>>>> 22b9f77d21fa51084afd4f6626c2184e050419e4
- */
+
     
 //------------ MAIN --------------------
  override func viewDidLoad() {
         super.viewDidLoad()
 
-    // dbref = Database.database().reference()
+     dbref = Database.database().reference()
 
         imageNameLabel.text = dataModel.imageName
         yearLabel.text = dataModel.imageYear
         priceLabel.text = dataModel.imagePrice
 
-    // self.partAdded.isHidden = true
-    // partAdded.text = "Part Added!"
+     self.partAdded.isHidden = true
+     partAdded.text = "Part Added!"
     
         imageView.image = UIImage(named: dataModel.imageName)
     }
@@ -67,15 +89,10 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    /*@IBAction func addToInventory(_ sender: Any) {
-        let user = Auth.auth().currentUser?.uid
-    self.dbref?.child("Users").child(user!).child("repairs").childByAutoId().setValue(imageNameLabel.text)
-        //self.partAdded.isHidden = false
-        
-    }*/
-    
     //--------Declaring a global variable-----------
     struct GlobalVariable{
         static var inventoryList = [String]()
+        static var car1 = [CGRect]()
     }
+
 }
