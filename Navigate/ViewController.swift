@@ -38,6 +38,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //Stored array is receiving to populate inventory list is being accessed from DetailViewController variable called inventory list (global variable)
         data = DetailViewController.GlobalVariable.inventoryList
         rectList = DetailViewController.GlobalVariable.car1
+        
         //------------------Reference to database -Terry-------------------------------
         dbref = Database.database().reference()
 
@@ -55,21 +56,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             scrollView.addSubview(imageView)
             
         }*/
-       /* let battery1 = CGRect(x: 50, y: 50, width: 50, height: 50)
-        let breakpad1 = CGRect(x: 340, y: 60, width: 40, height: 40)
-        let tire1 = CGRect(x: 170, y: 90, width: 50, height: 40)
-        let muffler1 = CGRect(x: 270, y: 60, width: 20, height: 20)
-        let sparkplug1 = CGRect(x: 120, y: 85, width: 40, height: 20)
- 
-        rectList.append(battery1)
-        rectList.append(breakpad1)
-        rectList.append(tire1)
-        rectList.append(muffler1)
-        rectList.append(sparkplug1)
- 
-        //cut(hole: battery1, hole2: breakpad1, hole3: tire1, hole4: muffler1, hole5: sparkplug1, v: car)
-        cut(hole: rectList, v:car)
-*/
+        
         cut(hole: rectList)
         sideMenus()
         customizeNavBar()
@@ -96,9 +83,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
     }
-    
-    
-    
     
      func cut(hole: [CGRect]){
         let p:CGMutablePath = CGMutablePath()
@@ -137,10 +121,63 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete
         {
+            
+    // -CHECKS IF ELEMENT DELETED IS THE LAST ELEMENT AND THEN DELETES THE RECTANGLE CORRESPONDING (TEMPORARY SOLUTION)-
+            let test = DetailViewController.GlobalVariable.inventoryList[indexPath.row]
+            
             DetailViewController.GlobalVariable.inventoryList.remove(at: indexPath.row)
-            DetailViewController.GlobalVariable.car1.remove(at: indexPath.row)
-            rectList.remove(at: indexPath.row)
             data.remove(at: indexPath.row)
+            
+            if data.contains(test) {
+                print("DO NOTHING")
+            }
+            else{
+                if test == "battery" {
+                    for rect in rectList{
+                        if rect.equalTo(CGRect(x:50, y: 50, width:50, height:50)){
+                            let index = rectList.index(of: rect)
+                            rectList.remove(at: index!)
+                            DetailViewController.GlobalVariable.car1.remove(at: index!)
+                        }
+                    }
+                }
+                else if test == "breakPads" {
+                    for rect in rectList{
+                        if rect.equalTo(CGRect(x: 340, y: 60, width: 40, height: 40)){
+                            let index = rectList.index(of: rect)
+                            rectList.remove(at: index!)
+                            DetailViewController.GlobalVariable.car1.remove(at: index!)
+                        }
+                    }
+                }
+                else if test == "tire" {
+                    for rect in rectList{
+                        if rect.equalTo(CGRect(x: 170, y: 90, width: 50, height: 40)){
+                            let index = rectList.index(of: rect)
+                            rectList.remove(at: index!)
+                            DetailViewController.GlobalVariable.car1.remove(at: index!)
+                        }
+                    }
+                }
+                else if test == "muffler" {
+                    for rect in rectList{
+                        if rect.equalTo(CGRect(x: 270, y: 60, width: 20, height: 20)){
+                            let index = rectList.index(of: rect)
+                            rectList.remove(at: index!)
+                            DetailViewController.GlobalVariable.car1.remove(at: index!)
+                        }
+                    }
+                }
+                else if test == "sparkPlug" {
+                    for rect in rectList{
+                        if rect.equalTo(CGRect(x: 120, y: 85, width: 40, height: 20)){
+                            let index = rectList.index(of: rect)
+                            rectList.remove(at: index!)
+                            DetailViewController.GlobalVariable.car1.remove(at: index!)
+                        }
+                    }
+                }
+            }
             cut(hole: rectList)
             tableView.reloadData()
         }
