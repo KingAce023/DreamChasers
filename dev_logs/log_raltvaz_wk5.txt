@@ -1,1 +1,0 @@
-Things done this week: Spend 12 hours implementing and completing colouring of part of UIImage

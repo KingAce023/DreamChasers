@@ -24,7 +24,7 @@ class DetailViewController: UIViewController {
     weak var sourceController: ViewController?
     
     @IBOutlet weak var partAdded: UILabel!
-
+    //let vc = ViewController()
     
 //<<<<<<< HEAD
     
@@ -35,48 +35,26 @@ class DetailViewController: UIViewController {
         self.partAdded.isHidden = false
         GlobalVariable.inventoryList.append(imageNameLabel.text!)
        
-        //---- ADD TO CGRect ARRAY AND MAKES SURE THERE IS NO DUPLICATES (TEMPORARY SOLUTION) --------------------------
         if (imageNameLabel.text == "battery"){
-            if GlobalVariable.car1.contains(CGRect(x:50, y: 50, width:50, height:50)) {
-                print("BATTERY ALREADY EXISTS")
-            }
-            else{
-                GlobalVariable.car1.append(CGRect(x: 50, y: 50, width: 50, height: 50))
-            }
+            GlobalVariable.car1.append(CGRect(x: 50, y: 50, width: 50, height: 50))
+           // ViewController.cut(hole: GlobalVariable.car1, v: (sourceController?.car)!)
         }
         else if (imageNameLabel.text == "breakPads"){
-            if GlobalVariable.car1.contains(CGRect(x: 340, y: 60, width: 40, height: 40)) {
-                print("BREAKPADS ALREADY EXISTS")
-            }
-            else{
-                GlobalVariable.car1.append(CGRect(x: 340, y: 60, width: 40, height: 40))
-            }
+            GlobalVariable.car1.append(CGRect(x: 340, y: 60, width: 40, height: 40))
+         //   ViewController.cut(hole: GlobalVariable.car1, v: ViewController().car)
         }
         else if (imageNameLabel.text == "tire"){
-            if GlobalVariable.car1.contains(CGRect(x: 170, y: 90, width: 50, height: 40)) {
-                print("TIRE ALREADY EXISTS")
-            }
-            else{
-                GlobalVariable.car1.append(CGRect(x: 170, y: 90, width: 50, height: 40))
-            }
+            GlobalVariable.car1.append(CGRect(x: 170, y: 90, width: 50, height: 40))
+       //     ViewController.cut(hole: GlobalVariable.car1, v: ViewController().car)
         }
         else if (imageNameLabel.text == "muffler"){
-            if GlobalVariable.car1.contains(CGRect(x: 270, y: 60, width: 20, height: 20)) {
-                print("MUFFLER ALREADY EXISTS")
-            }
-            else{
-                GlobalVariable.car1.append(CGRect(x: 270, y: 60, width: 20, height: 20))
-            }
+            GlobalVariable.car1.append(CGRect(x: 270, y: 60, width: 20, height: 20))
+     //       ViewController.cut(hole: GlobalVariable.car1, v: ViewController().car)
         }
         else if (imageNameLabel.text == "sparkPlug"){
-            if GlobalVariable.car1.contains(CGRect(x: 120, y: 85, width: 40, height: 20)) {
-                print("SPARKPLUG ALREADY EXISTS")
-            }
-            else{
-                GlobalVariable.car1.append(CGRect(x: 120, y: 85, width: 40, height: 20))
-            }
+            GlobalVariable.car1.append(CGRect(x: 120, y: 85, width: 40, height: 20))
+   //         ViewController.cut(hole: GlobalVariable.car1, v: ViewController().car)
         }
-        //--------------------------------------------------------------------------------
    
         //--------------This will reload the main page again----------------
         let mainStoryBoard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
