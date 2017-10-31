@@ -11,6 +11,9 @@ import MessageUI
 
 class contactViewController: UIViewController {
 
+    @IBOutlet weak var text: UITextView!
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var subject: UITextField!
     @IBOutlet weak var btnMenuOpen: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,5 +36,10 @@ class contactViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        email.resignFirstResponder()
+        subject.resignFirstResponder()
+        text.resignFirstResponder()
+    }
 
 }
