@@ -560,7 +560,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HtG-tr-kY3">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shelf Life (years):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HtG-tr-kY3">
                                             <rect key="frame" x="130" y="37" width="156" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -628,8 +628,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Issued:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bv1-LC-V0U">
-                                <rect key="frame" x="26" y="330" width="95" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shelf Life (years):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bv1-LC-V0U">
+                                <rect key="frame" x="26" y="330" width="134" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="BX8-kN-2P1"/>
                                 </constraints>
@@ -637,8 +637,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price: $" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pA-IX-6Ez">
-                                <rect key="frame" x="26" y="356" width="58.5" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Approximate Price: $" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pA-IX-6Ez">
+                                <rect key="frame" x="26" y="356" width="160" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="3Q8-Ny-p8D"/>
                                 </constraints>
@@ -678,15 +678,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJN-WD-3Sf">
-                                <rect key="frame" x="26" y="470" width="138" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.91098775799999998" green="0.91098775799999998" blue="0.91098775799999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Add to My Inventory"/>
-                                <connections>
-                                    <action selector="invList:" destination="efC-Sw-FQq" eventType="touchUpInside" id="r3O-Jw-uNu"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZq-hs-5xS">
                                 <rect key="frame" x="26" y="539" width="138" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -694,13 +685,39 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchase Price: $" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKU-GB-VFa">
+                                <rect key="frame" x="26" y="382" width="135" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="rnS-2J-ekz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hyq-80-nkE">
+                                <rect key="frame" x="163" y="382" width="67" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJN-WD-3Sf">
+                                <rect key="frame" x="26" y="534" width="138" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.91098775799999998" green="0.91098775799999998" blue="0.91098775799999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Add to My Inventory"/>
+                                <connections>
+                                    <action selector="invList:" destination="efC-Sw-FQq" eventType="touchUpInside" id="r3O-Jw-uNu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9pA-IX-6Ez" firstAttribute="top" secondItem="bv1-LC-V0U" secondAttribute="bottom" constant="5" id="03D-ta-6PD"/>
                             <constraint firstItem="P7f-E7-Du1" firstAttribute="top" secondItem="Wce-mg-wk0" secondAttribute="bottom" constant="5" id="7ei-a7-Ezn"/>
                             <constraint firstItem="4J1-v7-RcI" firstAttribute="top" secondItem="eg2-NJ-hRQ" secondAttribute="bottom" constant="25" id="8kQ-zH-SfW"/>
+                            <constraint firstItem="hyq-80-nkE" firstAttribute="top" secondItem="9pA-IX-6Ez" secondAttribute="bottom" constant="5" id="Akf-57-L7U"/>
                             <constraint firstItem="8OF-qu-Wzb" firstAttribute="top" secondItem="P7f-E7-Du1" secondAttribute="bottom" constant="5" id="DmJ-uo-3tv"/>
+                            <constraint firstItem="CKU-GB-VFa" firstAttribute="top" secondItem="9pA-IX-6Ez" secondAttribute="bottom" constant="5" id="GcM-pD-1qZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="P7f-E7-Du1" secondAttribute="trailing" constant="129" id="HQt-ou-7F1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8OF-qu-Wzb" secondAttribute="trailing" constant="129" id="IBM-Y4-FTk"/>
                             <constraint firstItem="ew8-2V-EFz" firstAttribute="leading" secondItem="KLM-sh-xQW" secondAttribute="leadingMargin" constant="10" id="QK9-C1-xfR"/>
@@ -708,7 +725,10 @@
                             <constraint firstItem="bv1-LC-V0U" firstAttribute="leading" secondItem="KLM-sh-xQW" secondAttribute="leadingMargin" constant="10" id="ekY-ji-c6c"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Wce-mg-wk0" secondAttribute="trailing" constant="129" id="em2-L7-WUy"/>
                             <constraint firstItem="4J1-v7-RcI" firstAttribute="leading" secondItem="KLM-sh-xQW" secondAttribute="leadingMargin" constant="10" id="hVj-Nm-EUZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hyq-80-nkE" secondAttribute="trailing" constant="129" id="nAI-jI-4sH"/>
                             <constraint firstItem="ew8-2V-EFz" firstAttribute="top" secondItem="4J1-v7-RcI" secondAttribute="bottom" constant="10" id="qpz-WB-PPG"/>
+                            <constraint firstItem="CKU-GB-VFa" firstAttribute="leading" secondItem="KLM-sh-xQW" secondAttribute="leadingMargin" constant="10" id="vbK-Ee-2rF"/>
+                            <constraint firstItem="hyq-80-nkE" firstAttribute="leading" secondItem="CKU-GB-VFa" secondAttribute="trailing" constant="2" id="vqO-IJ-u56"/>
                             <constraint firstItem="bv1-LC-V0U" firstAttribute="top" secondItem="ew8-2V-EFz" secondAttribute="bottom" constant="5" id="vrC-bA-ihT"/>
                             <constraint firstItem="9pA-IX-6Ez" firstAttribute="leading" secondItem="KLM-sh-xQW" secondAttribute="leadingMargin" constant="10" id="yH9-g2-7z8"/>
                         </constraints>
