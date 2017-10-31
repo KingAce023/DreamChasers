@@ -55,21 +55,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             scrollView.addSubview(imageView)
             
         }*/
-       /* let battery1 = CGRect(x: 50, y: 50, width: 50, height: 50)
-        let breakpad1 = CGRect(x: 340, y: 60, width: 40, height: 40)
-        let tire1 = CGRect(x: 170, y: 90, width: 50, height: 40)
-        let muffler1 = CGRect(x: 270, y: 60, width: 20, height: 20)
-        let sparkplug1 = CGRect(x: 120, y: 85, width: 40, height: 20)
- 
-        rectList.append(battery1)
-        rectList.append(breakpad1)
-        rectList.append(tire1)
-        rectList.append(muffler1)
-        rectList.append(sparkplug1)
- 
-        //cut(hole: battery1, hole2: breakpad1, hole3: tire1, hole4: muffler1, hole5: sparkplug1, v: car)
-        cut(hole: rectList, v:car)
-*/
+
         cut(hole: rectList)
         sideMenus()
         customizeNavBar()
@@ -99,7 +85,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     
-    
+    //---------------CREATE PARTS OF GREEN IMAGES CORRESPONDING TO ADDED PARTS------------------
      func cut(hole: [CGRect]){
         let p:CGMutablePath = CGMutablePath()
         p.addRect(car.bounds)
@@ -137,11 +123,72 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete
         {
+        
+        // -CHECKS IF ELEMENT DELETED IS THE LAST ELEMENT AND THEN DELETES THE RECTANGLE CORRESPONDING (TEMPORARY SOLUTION)-
+            
+            //Get the string we are trying to delete
+            let test = DetailViewController.GlobalVariable.inventoryList[indexPath.row]
+            
+            //Remove the string from the table
             DetailViewController.GlobalVariable.inventoryList.remove(at: indexPath.row)
-            DetailViewController.GlobalVariable.car1.remove(at: indexPath.row)
-            rectList.remove(at: indexPath.row)
             data.remove(at: indexPath.row)
+            
+            //Check if table still contains the string, if it does dont remove the green corresponging part
+            if data.contains(test) {
+                print("DO NOTHING")
+            }
+            //Otherwise check which part we are trying to remove
+            else{
+                if test == "battery" {
+                    //Go through the CGrect array, find the corresponding part and remove (applies to the other else if statments too)
+                    for rect in rectList{
+                        if rect.equalTo(CGRect(x:50, y: 50, width:50, height:50)){
+                            let index = rectList.index(of: rect)
+                            rectList.remove(at: index!)
+                            DetailViewController.GlobalVariable.car1.remove(at: index!)
+                        }
+                    }
+                }
+                else if test == "breakPads" {
+                    for rect in rectList{
+                        if rect.equalTo(CGRect(x: 340, y: 60, width: 40, height: 40)){
+                            let index = rectList.index(of: rect)
+                            rectList.remove(at: index!)
+                            DetailViewController.GlobalVariable.car1.remove(at: index!)
+                        }
+                    }
+                }
+                else if test == "tire" {
+                    for rect in rectList{
+                        if rect.equalTo(CGRect(x: 170, y: 90, width: 50, height: 40)){
+                            let index = rectList.index(of: rect)
+                            rectList.remove(at: index!)
+                            DetailViewController.GlobalVariable.car1.remove(at: index!)
+                        }
+                    }
+                }
+                else if test == "muffler" {
+                    for rect in rectList{
+                        if rect.equalTo(CGRect(x: 270, y: 60, width: 20, height: 20)){
+                            let index = rectList.index(of: rect)
+                            rectList.remove(at: index!)
+                            DetailViewController.GlobalVariable.car1.remove(at: index!)
+                        }
+                    }
+                }
+                else if test == "sparkPlug" {
+                    for rect in rectList{
+                        if rect.equalTo(CGRect(x: 120, y: 85, width: 40, height: 20)){
+                            let index = rectList.index(of: rect)
+                            rectList.remove(at: index!)
+                            DetailViewController.GlobalVariable.car1.remove(at: index!)
+                        }
+                    }
+                }
+            }
+            //create the new green image
             cut(hole: rectList)
+            //reset the table
             tableView.reloadData()
         }
     }

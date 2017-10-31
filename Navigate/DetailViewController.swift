@@ -21,41 +21,48 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var imageNameLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    weak var sourceController: ViewController?
     
     @IBOutlet weak var partAdded: UILabel!
-    //let vc = ViewController()
     
 //<<<<<<< HEAD
     
     //-------- ADD TO INVENTORY BUTTON -------
     @IBAction func invList(_ sender: UIButton) {
+        // get current user id
         let user = Auth.auth().currentUser?.uid
+        // add part to current user's inventory
         self.dbref?.child("Users").child(user!).child("repairs").childByAutoId().setValue(imageNameLabel.text)
+        // show part added message
         self.partAdded.isHidden = false
         GlobalVariable.inventoryList.append(imageNameLabel.text!)
        
+ //---- ADD TO CGRect ARRAY AND MAKES SURE THERE IS NO DUPLICATES (TEMPORARY SOLUTION) --------------------------
         if (imageNameLabel.text == "battery"){
-            GlobalVariable.car1.append(CGRect(x: 50, y: 50, width: 50, height: 50))
-           // ViewController.cut(hole: GlobalVariable.car1, v: (sourceController?.car)!)
+            if !(GlobalVariable.car1.contains(CGRect(x:50, y: 50, width:50, height:50))) {
+                GlobalVariable.car1.append(CGRect(x: 50, y: 50, width: 50, height: 50))
+            }
         }
         else if (imageNameLabel.text == "breakPads"){
-            GlobalVariable.car1.append(CGRect(x: 340, y: 60, width: 40, height: 40))
-         //   ViewController.cut(hole: GlobalVariable.car1, v: ViewController().car)
+            if !(GlobalVariable.car1.contains(CGRect(x: 340, y: 60, width: 40, height: 40))) {
+                GlobalVariable.car1.append(CGRect(x: 340, y: 60, width: 40, height: 40))
+            }
         }
         else if (imageNameLabel.text == "tire"){
-            GlobalVariable.car1.append(CGRect(x: 170, y: 90, width: 50, height: 40))
-       //     ViewController.cut(hole: GlobalVariable.car1, v: ViewController().car)
+            if !(GlobalVariable.car1.contains(CGRect(x: 170, y: 90, width: 50, height: 40))) {
+                GlobalVariable.car1.append(CGRect(x: 170, y: 90, width: 50, height: 40))
+            }
         }
         else if (imageNameLabel.text == "muffler"){
-            GlobalVariable.car1.append(CGRect(x: 270, y: 60, width: 20, height: 20))
-     //       ViewController.cut(hole: GlobalVariable.car1, v: ViewController().car)
+            if !(GlobalVariable.car1.contains(CGRect(x: 270, y: 60, width: 20, height: 20))) {
+                GlobalVariable.car1.append(CGRect(x: 270, y: 60, width: 20, height: 20))
+            }
         }
         else if (imageNameLabel.text == "sparkPlug"){
-            GlobalVariable.car1.append(CGRect(x: 120, y: 85, width: 40, height: 20))
-   //         ViewController.cut(hole: GlobalVariable.car1, v: ViewController().car)
+            if !(GlobalVariable.car1.contains(CGRect(x: 120, y: 85, width: 40, height: 20))) {
+                GlobalVariable.car1.append(CGRect(x: 120, y: 85, width: 40, height: 20))
+            }
         }
-   
+        //--------------------------------------------------------------------------------
         //--------------This will reload the main page again----------------
         let mainStoryBoard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let desViewController = mainStoryBoard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
@@ -64,14 +71,14 @@ class DetailViewController: UIViewController {
         //------------------------------------------------------------------
     }
  
-    
+    // get Firebase reference
    var dbref: DatabaseReference?
 
     
 //------------ MAIN --------------------
  override func viewDidLoad() {
         super.viewDidLoad()
-
+    // get instance of firebase reference
      dbref = Database.database().reference()
 
         imageNameLabel.text = dataModel.imageName
