@@ -10,6 +10,14 @@ import UIKit
 import UserNotifications
 class settingsViewController: UIViewController {
 
+    
+    @IBOutlet weak var fname: UITextField!
+    
+    @IBOutlet weak var lname: UITextField!
+    
+    @IBOutlet weak var age: UITextField!
+    @IBOutlet weak var sex: UITextField!
+    
     @IBOutlet weak var menuBtn: UIBarButtonItem!
     @IBOutlet weak var theSwitch: UISwitch!
     @IBAction func onOffSwitch(_ sender: Any) {
@@ -50,7 +58,12 @@ class settingsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        fname.resignFirstResponder()
+        lname.resignFirstResponder()
+        age.resignFirstResponder()
+        sex.resignFirstResponder()
+    }
 
     /*
     // MARK: - Navigation

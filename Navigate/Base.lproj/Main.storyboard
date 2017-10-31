@@ -226,14 +226,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iKw-hQ-Izz">
-                                <rect key="frame" x="16" y="109" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Subject" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pJY-pq-4hD">
-                                <rect key="frame" x="16" y="147" width="343" height="30"/>
+                                <rect key="frame" x="16" y="92" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -252,6 +245,13 @@
                                 <color key="backgroundColor" red="0.91098775799999998" green="0.91098775799999998" blue="0.91098775799999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Submit"/>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Subject" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pJY-pq-4hD">
+                                <rect key="frame" x="16" y="138" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -260,6 +260,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="btnMenuOpen" destination="j3k-T0-UKp" id="PuH-T2-sax"/>
+                        <outlet property="email" destination="iKw-hQ-Izz" id="5Qp-CA-st7"/>
+                        <outlet property="subject" destination="pJY-pq-4hD" id="MfT-US-lSC"/>
+                        <outlet property="text" destination="Pah-48-2vU" id="3S5-Bt-Jfb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ieu-2B-S2S" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -396,7 +399,11 @@
                         <barButtonItem key="rightBarButtonItem" image="menu" id="Kwi-Uz-yc6"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="age" destination="LiU-PG-BQX" id="Ld4-ex-Rc8"/>
+                        <outlet property="fname" destination="zEA-5n-phW" id="gov-jV-IxV"/>
+                        <outlet property="lname" destination="f83-WX-MaV" id="j0m-UM-kaa"/>
                         <outlet property="menuBtn" destination="Kwi-Uz-yc6" id="tjb-C9-FOG"/>
+                        <outlet property="sex" destination="3ag-lV-g33" id="MHk-2y-yzd"/>
                         <outlet property="theSwitch" destination="FDf-cU-YFd" id="x9i-Ku-x52"/>
                     </connections>
                 </viewController>

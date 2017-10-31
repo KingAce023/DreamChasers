@@ -23,8 +23,8 @@ class Model: NSObject {
 //Note, the name MUST match the picture name from the Assets.xcassets folder, or else it will not populate.
     
     class func generateModelArray() -> [Model]{
-        var dbref: DatabaseReference?
-        dbref = Database.database().reference()
+        //var dbref: DatabaseReference?
+        //dbref = Database.database().reference()
 
         var modelAry = [Model]()
         /*dbref?.child("Parts").observe(.childAdded, with: { (snapshot) in
